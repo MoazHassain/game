@@ -93,9 +93,9 @@ document.addEventListener("DOMContentLoaded",() => {
     cardArray.sort(() =>.5 - Math.random())
     const grid=document.querySelector(".grid")
     const resultDisplay=document.querySelector("#result")
-    let cardsChosen=[]
-    let cardsChosenID=[]
-    let cardsWon=[]
+    var cardsChosen=[]
+    var cardsChosenID=[]
+    var cardsWon=[]
 
     function createBoard(){
         for (let i=0; i < cardArray.length; i++) {
@@ -111,7 +111,7 @@ document.addEventListener("DOMContentLoaded",() => {
         let cards =document.querySelectorAll("img")
         const optionOneId= cardsChosenID[0]
         const optionTwoId= cardsChosenID[1]
-        if(cardsChosenID[0] === cardsChosenID[1]){
+        if(cardsChosen[0] === cardsChosen[1]){
             alert("you have found a match")
             cards[optionOneId].setAttribute("src", "image/white.png")
             cards[optionTwoId].setAttribute("src", "image/white.png")
@@ -128,6 +128,7 @@ document.addEventListener("DOMContentLoaded",() => {
             resultDisplay.textContent="congratulation! you found them all!"
         }
     }
+    
 
     function filpCard(){
         let cardId= this.getAttribute("data-id")
